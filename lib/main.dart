@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   appleLogIn() async {
-    if ( await apple.AppleSignIn.isAvailable()) {
+    if (await apple.AppleSignIn.isAvailable()) {
       final apple.AuthorizationResult result =
           await apple.AppleSignIn.performRequests([
         apple.AppleIdRequest(
