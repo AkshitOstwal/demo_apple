@@ -60,12 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   appleLogIn() async {
-    if (await apple.AppleSignIn.isAvailable()) {
-      //Check if Apple SignIn isn available for the device or not
-    } else {
-      print('Apple SignIn is not available for your device');
-    }
-    if (await apple.AppleSignIn.isAvailable()) {
+    if ( await apple.AppleSignIn.isAvailable()) {
       final apple.AuthorizationResult result =
           await apple.AppleSignIn.performRequests([
         apple.AppleIdRequest(
@@ -82,6 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
           print('User cancelled');
           break;
       }
+    } else {
+      print('Apple SignIn is not available for your device');
     }
   }
 }
